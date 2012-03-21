@@ -1,0 +1,16 @@
+﻿.wysiwyg.Editor
+{
+    position : relative;
+    height : 260px;
+    width : 600px;
+    margin-bottom: 5px;
+}
+#wysiwygHolder
+{
+    width: 100%;
+}
+iframe  
+{
+    height : 100%;
+    width : 100%;
+}
