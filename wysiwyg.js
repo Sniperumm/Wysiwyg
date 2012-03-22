@@ -94,7 +94,7 @@ var myDoc;
                 });
                 else output = tempText.val();
 
-                if (doc.selection) win.selection.createRange().pasteHTML(output);
+                if (doc.selection) doc.selection.createRange().pasteHTML(output);
                 else doc.execCommand("insertHTML", false, output);
                 tempText.remove();
             }, 0);
