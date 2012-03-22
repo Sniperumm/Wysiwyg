@@ -81,20 +81,19 @@ var myDoc;
         if (ctrlDown && (e.keyCode == vKey)) {
             var doc = view,
                 win = view.defaultView;
-            saveSelection(doc, win);
+            saveSelection2(doc, win);
             var tempText = $("<textarea id=tempholder class=farleft />").appendTo(piframe.contents().find("body")).focus();
             setTimeout(function() {
                 piframe.focus();
-                restoreSelection(doc, win);
+                restoreSelection2(win);
                 var output = "";
-                if(tempText.val().indexOf("\n") > -1)
-                $.each(tempText.val().split(/[\n\r]+/g), function(i, el) {
+                if (tempText.val().indexOf("\n") > -1) $.each(tempText.val().split(/[\n\r]+/g), function(i, el) {
                     if (el) {
                         output += '<p>' + el + '</p>';
                     }
                 });
                 else output = tempText.val();
-                
+
                 if (doc.selection) win.selection.createRange().pasteHTML(output);
                 else doc.execCommand("insertHTML", false, output);
                 tempText.remove();
@@ -219,6 +218,25 @@ var myDoc;
         }
     }
 
+
+    function saveSelection2(ie, normal) {
+        if ($.browser.msie) savedRange = ie.selection.createRange();
+        else savedRange = normal.getSelection().getRangeAt(0);
+    }
+
+    function restoreSelection2(normal) {
+        isInFocus = true;
+        if (savedRange != null) {
+            if ($.browser.msie) savedRange.select();
+            else if (normal.createRange) normal.getSelection().addRange(savedRange);
+            else if (normal.getSelection) {
+                var s = normal.getSelection();
+                if (s.rangeCount > 0) s.removeAllRanges();
+                s.addRange(savedRange);
+            }
+        }
+    }
+
     function saveSelection(doc, win) {
         if (win.getSelection) //non IE Browsers
         {
@@ -250,6 +268,7 @@ var myDoc;
         }
     }
 
+
     $.fn.wysiwyg.defaults = {
         iframeHTML: "iframe.html",
         tools: ["format", "bold", "italic", "underline"],
@@ -270,7 +289,7 @@ var myDoc;
                     // Testing area
                     RemoveStyles(iframe, false);
                 }
-            
+
 
                 var options = control.data("wysiwyg");
                 options.iframe = this;
