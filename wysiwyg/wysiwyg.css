@@ -1,0 +1,92 @@
+.wysiwyg-Tools
+{
+    width: 100%;
+    height: 25px;
+    background-color: #EFEFEF;
+    border-bottom-width: 0px;
+    
+}
+.wysiwyg-Editor
+{
+    width: 100%;
+    height: 350px;
+    /*border-width: 0px 1px 1px 1px;*/
+}
+
+.wysiwyg div
+{
+    border: 1px solid;
+    border-color: #C0C0C0;
+}
+
+.wysiwyg iframe
+{
+    height: 100%; width: 100%;
+}
+
+.wysiwyg-Tools .format a{background-image: url('icons/format.png');}
+.wysiwyg-Tools .bold a{background-image: url('icons/bold.png');}
+.wysiwyg-Tools .italic a{background-image: url('icons/italic.png');}
+.wysiwyg-Tools .underline a{background-image: url('icons/underline.png');}
+.wysiwyg-Tools .strike_trough a{background-image: url('icons/strike_trough.png');}
+
+.wysiwyg-Tools ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.wysiwyg-Tools ul li
+{
+    float: left;
+    height: 100%;
+    width: 32px;
+}
+
+.wysiwyg-Tools li a
+{
+    background-position:center center;
+    background-repeat:no-repeat;
+    display:inline-block;
+    height:23px;
+    /*text-indent:-1000px;*/
+    width:30px;
+    /*outline: 0 none;*/
+    margin-left:2px;
+    margin-top:1px;
+}
+
+.wysiwyg-Tools ul li a:hover
+{
+    background-color: #ADD8E6;
+}
+
+.wysiwyg-Tools ul li a:active
+{
+    border: 1px red;
+}
+
+.on
+{
+    background-color: #DADADA;
+}
+
+
+.inners
+{
+    font-family: 'Times New Roman' , Times, serif;
+    font-size: medium;
+}
+
+.inners p
+{
+    border: 1px solid lightBlue;
+    margin-top: 0px;
+}
+
+.farleft { 
+    position: absolute;
+    left: -9999px;
+}
