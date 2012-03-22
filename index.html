@@ -9,11 +9,13 @@
     <textarea class="wysiwygHolder"></textarea>
     <div id="wysiwygHolder"></div>
     <script type="text/javascript">
-        $("#wysiwygHolder").wysiwyg(
-        {
-            iframeHTML: "wysiwyg/iframe.html",
-            tools: ["bold", "italic", "underline"],
-            stylesheet: "wysiwyg.css"
+        $(document).ready(function() {
+            $("#wysiwygHolder").wysiwyg(
+            {
+                iframeHTML: "wysiwyg/iframe.html",
+                tools: ["bold", "italic", "underline"],
+                stylesheet: "wysiwyg.css"
+            });
         });
     </script>
 </body>

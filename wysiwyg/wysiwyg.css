@@ -1,4 +1,4 @@
-﻿.wysiwyg-Tools
+.wysiwyg-Tools
 {
     width: 100%;
     height: 25px;
@@ -84,4 +84,9 @@
 {
     border: 1px solid lightBlue;
     margin-top: 0px;
+}
+
+.farleft { 
+    position: absolute;
+    left: -9999px;
 }
